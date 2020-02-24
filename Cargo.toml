@@ -1,0 +1,24 @@
+[package]
+name = "monkos"
+version = "0.1.0"
+authors = ["Ellis <esquires1@sheffield.ac.uk>"]
+edition = "2018"
+
+#Unwinding requires OS specificlibraries which I dont have time to implement.
+[profile.dev]
+panic = "abort"
+
+[profile.release]
+panic = "abort"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+bootloader = "0.8.0"
+volatile = "0.2.6"
+spin = "0.5.2"
+
+[dependencies.lazy_static]
+version = "1.0"
+features = ["spin_no_std"]
+
