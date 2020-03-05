@@ -133,10 +133,10 @@ impl Writer {
                 let character = self.buffer.chars[row][col].read();
                 self.buffer.chars[row - 1][col].write(character);
             }
-
-            self.clear_row(BUFFER_HEIGHT - 1);
-            self.column_position = 0;
         }
+
+        self.clear_row(BUFFER_HEIGHT - 1);
+        self.column_position = 0;
     }
 
     fn clear_row(&mut self, row: usize) {
