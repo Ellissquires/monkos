@@ -12,9 +12,11 @@ mod vga_buffer;
 #[no_mangle]
 // This is the overidden entry point
 pub extern "C" fn _start() -> ! {
-    
+
     println!("Hello");
     println!("Println now works!");
+
+    panic!("Some panic message");
 
     loop {}
 
@@ -29,5 +31,7 @@ function by returning the "never" type !.
 */
 #[panic_handler]
 fn panic(_info: &PanicInfo) -> ! {
+    println!("{}", _info);
+
     loop {}
 }
